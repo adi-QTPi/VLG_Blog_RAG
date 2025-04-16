@@ -1,6 +1,6 @@
 # Retrieval-Augmented Generation : A Basic Overview
 
-## The Problem with LLMs
+### The Problem with LLMs
 
 Large Language Models are trained on immense text datasets. LLMs are pretty equipped at finding patterns, comprehending the grammar and understanding the context. We can quantify the “knowledge” of an LLM by looking at the size of the dataset it had been trained on. In simple words, the more detailed the training data is, the better is the Language model’s performance in terms of context specific answers.
 
@@ -17,69 +17,69 @@ Along with this, following are some of the other problems
 These are the problems which make large organisations reluctant to use Language Models for their work.   
 For example \- For a legal research assistant, being unaware of the recent developments and amendments in the laws could lead to insufficient or even completely incorrect outputs.
 
-# The Solution
+### The Solution
 
 RAG (Retrieval Augmented Generation ) emerges as a critical technique for enhancing the reliability and accuracy of LLMs in such real world applications.  
 RAG significantly reduces hallucinations by augmenting the user’s prompt with all the other relevant documents related to the query so that the Language Model is equipped with up to date, detailed and correct information about the subject. This leads to enhanced understanding of the topic and thus better, more accurate responses.
 
-**Data Retrieval**   
+## **Data Retrieval**   
 Data retrieval is the very crucial step where the system identifies and retrieves the data and information which are most relevant to the user’s query. Data retrieval is done using two prominent approaches ie: Lexical and Semantic retrieval.
 
-1. **Lexical Retrieval**  
-   * The traditional approach.  
-   * Based on exact word matches and the frequency analysis.  
-   * Common methods are TF-IDF and BM25
+### 1. **Lexical Retrieval**  
+* The traditional approach.  
+* Based on exact word matches and the frequency analysis.  
+* Common methods are TF-IDF and BM25
 
-	  1.1 Term Frequency \- Inverse Document frequency (TF-IDF)**
+#### 1.1 Term Frequency \- Inverse Document frequency (TF-IDF)**
 
-		This is a numerical statistic which is used to determine the importance of a word in the document corpus. It characterises a word based on two basic metrics, first \- how often does the word appear in that individual document and second \- how infrequently (less often) the word appears in the entire corpus.
+This is a numerical statistic which is used to determine the importance of a word in the document corpus. It characterises a word based on two basic metrics, first \- how often does the word appear in that individual document and second \- how infrequently (less often) the word appears in the entire corpus.
 
-* Process \-   
-  * Term Frequency (TF) \-  
-    * Term Frequency means the relative frequency of the term (token) within a particular document.  
-    * Calculated by taking the ratio of the frequency of a term to the total number of terms in the document.  
-    * \#\#\#Math Formula\#\#\#  
-    * Aim is to determine the importance of that term within the document.
+##### * Process \-   
+* Term Frequency (TF) \-  
+* Term Frequency means the relative frequency of the term (token) within a particular document.  
+* Calculated by taking the ratio of the frequency of a term to the total number of terms in the document.  
+* \#\#\#Math Formula\#\#\#  
+* Aim is to determine the importance of that term within the document.
 
       
 
-  * Inverse Document Frequency (IDF) \-   
-    * IDF score tells about the rarity of the term in the document corpus.  
-    * Calculated by taking the log of the ratio of total number of documents in the corpus to the number of documents containing that term.  
-    * \#\#\#Math Formula\#\#\#  
-    * Aim is to penalize the ubiquity of a term within the corpus.  
-* Problems \-   
-  * The method does not take into account the saturation of term frequency.   
-  * Lack of any ability to differentiate between rare and common words except the IDF scaling.
+#####  * Inverse Document Frequency (IDF) \-   
+* IDF score tells about the rarity of the term in the document corpus.  
+* Calculated by taking the log of the ratio of total number of documents in the corpus to the number of documents containing that term.  
+* \#\#\#Math Formula\#\#\#  
+* Aim is to penalize the ubiquity of a term within the corpus.  
+##### * Problems \-   
+* The method does not take into account the saturation of term frequency.   
+* Lack of any ability to differentiate between rare and common words except the IDF scaling.
 
 		
 
-	**1.2 Best Matching 25 (BM25)**
+#### **1.2 Best Matching 25 (BM25)**
 
-		BM25 also adds methods which take the term frequency saturation in mind and also normalizes the length of document, resulting in better scoring.
+BM25 also adds methods which take the term frequency saturation in mind and also normalizes the length of document, resulting in better scoring.
 
-* Advantages (over TF-IDF) \-   
+##### * Advantages (over TF-IDF) \-   
   * After a certain threshold occurrence of the term does not increase its importance in the document, avoids over emphasizing of overly generic terms.  
   * TF-IDF tends to favour longer documents because they have more terms, but BM25 normalizes the document length such that shorter documents are also considered if they contain the terms relevant to the query. Thus eliminating the bias towards document length.  
   * Does not use a fixed formula like TF-IDF, thus BM25 is more adaptable.
 
 		
 
-	**1.3 Advantages of Lexical retrieval**
+#### **1.3 Advantages of Lexical retrieval**
 
 * **Efficiency and Speed \-** Because lexical retrieval uses basic string operations and does not require much of complex mathematical calculations, it is fast and demands less computational power.  
 * **No Training data Required \-** For exact keyword mapping, no training data is required. Thus useful for languages(or domains) for which labelled data is unobtainable.  
 * Due to the above advantages, Lexical retrieval can be better for scenarios where the query is well explained and demands the information relevant to particular keywords.
 
-	**1.4 Some Limitations**
+#### **1.4 Some Limitations**
 
 * **No Semantic Understanding \-** Lexical retrieval  methods have no scope of semantic understanding ie: they can not differentiate between synonyms and paraphrases.  
 * Vulnerability towards typographical errors and misspelling.
 
-2. **Semantic Retrieval**  
+### 2. **Semantic Retrieval**  
    
 
-	2.1 The Process- 
+#### **2.1 The Process-** 
 
 * Vector Encoding \-  
   * Machine learning models transform both the query and the document into vectors in a shared vector space.  
@@ -88,7 +88,7 @@ Data retrieval is the very crucial step where the system identifies and retrieve
   * Vectors in the query are compared using metrics like Cosine Similarity.  
   * All the relevant documents found are then augmented with the query and then supplied to the LLM.
 
-  2.2 Advantages \-
+#### **2.2 Advantages** \-
 
 * Capturing meaning and Context \- Now the documents are retrieved with a broader context, along with exact keyword matches, now the model also fetches relevant documents on the basis of meaning and possible interpretations.  
 * Enables more complex queries \- The queries can be more complex and nuanced, the user is now not required to use explicit terms related to the domain, but a general description of the subject leads to retrieval of the documents required for proper response.
