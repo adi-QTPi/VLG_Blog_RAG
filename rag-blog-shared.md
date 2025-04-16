@@ -17,7 +17,7 @@ Along with this, following are some of the other problems
 These are the problems which make large organisations reluctant to use Language Models for their work.   
 For example \- For a legal research assistant, being unaware of the recent developments and amendments in the laws could lead to insufficient or even completely incorrect outputs.
 
-The Solution
+# The Solution
 
 RAG (Retrieval Augmented Generation ) emerges as a critical technique for enhancing the reliability and accuracy of LLMs in such real world applications.  
 RAG significantly reduces hallucinations by augmenting the user’s prompt with all the other relevant documents related to the query so that the Language Model is equipped with up to date, detailed and correct information about the subject. This leads to enhanced understanding of the topic and thus better, more accurate responses.
