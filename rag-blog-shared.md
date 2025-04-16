@@ -34,7 +34,7 @@ Data retrieval is the very crucial step where the system identifies and retrieve
 
 This is a numerical statistic which is used to determine the importance of a word in the document corpus. It characterises a word based on two basic metrics, first \- how often does the word appear in that individual document and second \- how infrequently (less often) the word appears in the entire corpus.
 
-##### * Process \-   
+##### Process \-   
 * Term Frequency (TF) \-  
 * Term Frequency means the relative frequency of the term (token) within a particular document.  
 * Calculated by taking the ratio of the frequency of a term to the total number of terms in the document.  
@@ -43,12 +43,12 @@ This is a numerical statistic which is used to determine the importance of a wor
 
       
 
-#####  * Inverse Document Frequency (IDF) \-   
+#####  Inverse Document Frequency (IDF) \-   
 * IDF score tells about the rarity of the term in the document corpus.  
 * Calculated by taking the log of the ratio of total number of documents in the corpus to the number of documents containing that term.  
 * \#\#\#Math Formula\#\#\#  
 * Aim is to penalize the ubiquity of a term within the corpus.  
-##### * Problems \-   
+##### Problems \-   
 * The method does not take into account the saturation of term frequency.   
 * Lack of any ability to differentiate between rare and common words except the IDF scaling.
 
@@ -58,7 +58,7 @@ This is a numerical statistic which is used to determine the importance of a wor
 
 BM25 also adds methods which take the term frequency saturation in mind and also normalizes the length of document, resulting in better scoring.
 
-##### * Advantages (over TF-IDF) \-   
+##### Advantages (over TF-IDF) \-   
   * After a certain threshold occurrence of the term does not increase its importance in the document, avoids over emphasizing of overly generic terms.  
   * TF-IDF tends to favour longer documents because they have more terms, but BM25 normalizes the document length such that shorter documents are also considered if they contain the terms relevant to the query. Thus eliminating the bias towards document length.  
   * Does not use a fixed formula like TF-IDF, thus BM25 is more adaptable.
