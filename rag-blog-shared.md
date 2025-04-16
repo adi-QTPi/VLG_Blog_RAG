@@ -1,6 +1,6 @@
-Retrieval-Augmented Generation : A Basic Overview
+# Retrieval-Augmented Generation : A Basic Overview
 
-The Problem with LLMs
+## The Problem with LLMs
 
 Large Language Models are trained on immense text datasets. LLMs are pretty equipped at finding patterns, comprehending the grammar and understanding the context. We can quantify the “knowledge” of an LLM by looking at the size of the dataset it had been trained on. In simple words, the more detailed the training data is, the better is the Language model’s performance in terms of context specific answers.
 
@@ -30,8 +30,7 @@ Data retrieval is the very crucial step where the system identifies and retrieve
    * Based on exact word matches and the frequency analysis.  
    * Common methods are TF-IDF and BM25
 
-	  
-	**1.1 Term Frequency \- Inverse Document frequency (TF-IDF)**
+	  1.1 Term Frequency \- Inverse Document frequency (TF-IDF)**
 
 		This is a numerical statistic which is used to determine the importance of a word in the document corpus. It characterises a word based on two basic metrics, first \- how often does the word appear in that individual document and second \- how infrequently (less often) the word appears in the entire corpus.
 
